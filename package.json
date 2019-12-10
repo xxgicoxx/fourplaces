@@ -1,0 +1,28 @@
+{
+  "name": "fourplaces",
+  "displayName": "Fourplaces",
+  "version": "1.0.0",
+  "description": "Foursquare Places API wrapper for Node JS",
+  "author": "Giovani de Oliveira <giovanioliveira@outlook.com.br>",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xxgicoxx/fourplaces.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xxgicoxx/fourplaces/issues"
+  },
+  "homepage": "https://github.com/xxgicoxx/fourplaces#readme",
+  "keywords": [
+    "foursquare",
+    "places",
+    "api"
+  ],
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}

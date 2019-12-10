@@ -1,0 +1,68 @@
+const api = {
+    version: '20180323',
+    url: 'https://api.foursquare.com/v2',
+    authenticate: 'https://foursquare.com/oauth2/authenticate',
+    access_token: 'https://foursquare.com/oauth2/access_token',
+    venues: {
+        search: '/venues/search',
+        explore: '/venues/explore',
+        trending: '/venues/trending',
+        suggestcompletion: '/venues/suggestcompletion',
+        categories: '/venues/categories',
+        select: '/venues/VENUE_ID/select',
+        likes: '/venues/VENUE_ID/likes',
+        similar: '/venues/VENUE_ID/similar',
+        nextvenues: '/venues/VENUE_ID/nextvenues',
+        listed: '/venues/VENUE_ID/listed',
+        details: '/venues/VENUE_ID',
+        photos: '/venues/VENUE_ID/photos',
+        tips: '/venues/VENUE_ID/tips',
+        hours: '/venues/VENUE_ID/hours',
+        menu: '/venues/VENUE_ID/menu',
+        links: '/venues/VENUE_ID/links',
+        events: '/venues/VENUE_ID/events',
+        timeseries: '/venues/timeseries',
+        stats: '/venues/VENUE_ID/stats',
+        managed: '/venues/managed',
+        add: '/venues/add',
+        claim: '/venues/VENUE_ID/claim',
+        flag: '/venues/VENUE_ID/flag',
+        proposeedit: '/venues/VENUE_ID/proposeedit',
+        like: '/venues/VENUE_ID/like',
+    },
+    users: {
+        details: '/users/USER_ID',
+        checkins: '/users/USER_ID/checkins',
+        friends: '/users/USER_ID/friends',
+        photos: '/users/USER_ID/photos',
+        venuehistory: '/users/USER_ID/venuehistory',
+        tastes: '/users/USER_ID/tastes',
+        venuelikes: '/users/USER_ID/venuelikes',
+        lists: '/users/USER_ID/lists',
+    },
+    photos: {
+        details: '/photos/PHOTO_ID',
+        add: '/photos/add',
+    },
+    lists: {
+        details: '/lists/LIST_ID',
+        add: '/lists/add',
+        additem: '/lists/LIST_ID/additem',
+        share: '/lists/LIST_ID/share',
+    },
+    tips: {
+        details: '/tips/TIP_ID',
+        add: '/tips/add',
+    },
+    checkins: {
+        details: '/checkins/CHECKIN_ID',
+        resolve: '/checkins/resolve',
+        add: '/checkins/add',
+        like: '/checkins/CHECKIN_ID/like',
+        addpost: '/checkins/CHECKIN_ID/addpost',
+    }
+};
+
+module.exports = {
+    api,
+};
