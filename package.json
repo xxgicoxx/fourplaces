@@ -1,7 +1,7 @@
 {
   "name": "fourplaces",
   "displayName": "Fourplaces",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Foursquare Places API wrapper for Node JS",
   "author": "Giovani de Oliveira <giovanioliveira@outlook.com.br>",
   "license": "MIT",
@@ -23,6 +23,12 @@
     "api"
   ],
   "dependencies": {
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.8"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0"
   }
 }

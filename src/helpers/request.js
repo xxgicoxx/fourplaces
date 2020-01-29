@@ -1,25 +1,14 @@
-const request = require('request');
+const request = require('request-promise-native');
 
 /**
- * @param {*} url 
- * @param {*} method 
- * @param {*} qs 
+ * @param {*} url
+ * @param {*} method
+ * @param {*} qs
  */
-req = (url, method, qs) => {
-    return new Promise((resolve, reject) => {
-        request({
-            url: url,
-            method: method,
-            json: true,
-            qs: qs
-        }, function(err, res, body) {
-            if (err) {
-                reject(err);
-            } else {
-                resolve(body);
-            }
-        });
-    });
+function req(url, method, qs) {
+  return request({
+    url, method, json: true, qs,
+  });
 }
 
 module.exports = req;
