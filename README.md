@@ -51,15 +51,15 @@ fp.venues().explore({
   "response": {
     "suggestedFilters": { 
       "header": "Tap to show:", 
-      "filters": [Array] 
+      "filters": [] 
     },
     "geocode": {
       "what": "",
       "where": "pato branco pr",
-      "center": [Object],
+      "center": [],
       "displayString": "Pato Branco, PR, Brazil",
       "cc": "BR",
-      "geometry": [Object],
+      "geometry": [],
       "slug": "pato-branco-estado-do-parana-brazil",
       "longId": "72057594041382754"
     },
@@ -69,11 +69,11 @@ fp.venues().explore({
     "query": "cafe",
     "totalResults": "39",
     "suggestedBounds": { 
-      "ne": [Object], 
-      "sw": [Object] 
+      "ne": [], 
+      "sw": [] 
     },
     "groups": [ 
-      [Object] 
+      [] 
     ]
   }
 }
