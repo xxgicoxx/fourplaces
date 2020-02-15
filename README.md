@@ -44,26 +44,37 @@ fp.venues().explore({
 ### Response example
 ```json
 {
-  meta: { code: 200, requestId: '5e46a32971c428001b1bc663' },
-  response: {
-    suggestedFilters: { header: 'Tap to show:', filters: [Array] },
-    geocode: {
-      what: '',
-      where: 'pato branco pr',
-      center: [Object],
-      displayString: 'Pato Branco, PR, Brazil',
-      cc: 'BR',
-      geometry: [Object],
-      slug: 'pato-branco-estado-do-parana-brazil',
-      longId: '72057594041382754'
+  "meta": { 
+    "code": 200, 
+    "requestId": "5e46a32971c428001b1bc663" 
+  },
+  "response": {
+    "suggestedFilters": { 
+      "header": "Tap to show:", 
+      "filters": [Array] 
     },
-    headerLocation: 'Pato Branco',
-    headerFullLocation: 'Pato Branco',
-    headerLocationGranularity: 'city',
-    query: 'cafe',
-    totalResults: 39,
-    suggestedBounds: { ne: [Object], sw: [Object] },
-    groups: [ [Object] ]
+    "geocode": {
+      "what": "",
+      "where": "pato branco pr",
+      "center": [Object],
+      "displayString": "Pato Branco, PR, Brazil",
+      "cc": "BR",
+      "geometry": [Object],
+      "slug": "pato-branco-estado-do-parana-brazil",
+      "longId": "72057594041382754"
+    },
+    "headerLocation": "Pato Branco",
+    "headerFullLocation": "Pato Branco",
+    "headerLocationGranularity": "city",
+    "query": "cafe",
+    "totalResults": "39",
+    "suggestedBounds": { 
+      "ne": [Object], 
+      "sw": [Object] 
+    },
+    "groups": [ 
+      [Object] 
+    ]
   }
 }
 ````
