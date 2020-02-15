@@ -1,5 +1,7 @@
 const api = {
   version: '20180323',
+  response_type: 'code',
+  grant_type: 'authorization_code',
   url: 'https://api.foursquare.com/v2',
   authenticate: 'https://foursquare.com/oauth2/authenticate',
   access_token: 'https://foursquare.com/oauth2/access_token',

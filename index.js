@@ -1,1 +1,1 @@
-module.exports = require('./src/controllers/Fourplaces');
+module.exports = require('./src/controllers/FourplacesController');
