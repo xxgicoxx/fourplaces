@@ -17,7 +17,7 @@ class UsersService {
     */
   async details(userId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const details = await request({
         url: (`${apiConfig.url}${apiConfig.users.details}`).replace('USER_ID', userId), method: 'GET', json: true, qs,
@@ -39,7 +39,7 @@ class UsersService {
     */
   async checkins(userId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const checkins = await request({
         url: (`${apiConfig.url}${apiConfig.users.checkins}`).replace('USER_ID', userId), method: 'GET', json: true, qs,
@@ -61,7 +61,7 @@ class UsersService {
     */
   async friends(userId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const friends = await request({
         url: (`${apiConfig.url}${apiConfig.users.friends}`).replace('USER_ID', userId), method: 'GET', json: true, qs,
@@ -83,7 +83,7 @@ class UsersService {
     */
   async photos(userId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const photos = await request({
         url: (`${apiConfig.url}${apiConfig.users.photos}`).replace('USER_ID', userId), method: 'GET', json: true, qs,
@@ -105,7 +105,7 @@ class UsersService {
     */
   async venuehistory(userId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const venuehistory = await request({
         url: (`${apiConfig.url}${apiConfig.users.venuehistory}`).replace('USER_ID', userId), method: 'GET', json: true, qs,
@@ -127,7 +127,7 @@ class UsersService {
     */
   async tastes(userId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const tastes = await request({
         url: (`${apiConfig.url}${apiConfig.users.tastes}`).replace('USER_ID', userId), method: 'GET', json: true, qs,
@@ -149,7 +149,7 @@ class UsersService {
     */
   async venuelikes(userId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const venuelikes = await request({
         url: (`${apiConfig.url}${apiConfig.users.venuelikes}`).replace('USER_ID', userId), method: 'GET', json: true, qs,
@@ -171,7 +171,7 @@ class UsersService {
     */
   async lists(userId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const lists = await request({
         url: (`${apiConfig.url}${apiConfig.users.lists}`).replace('USER_ID', userId), method: 'GET', json: true, qs,

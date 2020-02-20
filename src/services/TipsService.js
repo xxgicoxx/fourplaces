@@ -17,7 +17,7 @@ class TipsService {
     */
   async details(tipId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const details = await request({
         url: (`${apiConfig.url}${apiConfig.tips.details}`).replace('TIP_ID', tipId), method: 'GET', json: true, qs,
@@ -38,7 +38,7 @@ class TipsService {
     */
   async add(options = {}) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const add = await request({
         url: (`${apiConfig.url}${apiConfig.tips.add}`), method: 'POST', json: true, qs,

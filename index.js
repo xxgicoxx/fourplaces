@@ -1,1 +1,3 @@
-module.exports = require('./src/controllers/FourplacesController');
+const { FourplacesController } = require('./src/controllers');
+
+module.exports = FourplacesController;

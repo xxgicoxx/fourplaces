@@ -17,7 +17,7 @@ class PhotosService {
     */
   async details(photoId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const details = await request({
         url: (`${apiConfig.url}${apiConfig.photos.details}`).replace('PHOTO_ID', photoId), method: 'GET', json: true, qs,
@@ -38,7 +38,7 @@ class PhotosService {
     */
   async add(options = {}) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const add = await request({
         url: (`${apiConfig.url}${apiConfig.photos.add}`), method: 'POST', json: true, qs,

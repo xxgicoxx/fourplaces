@@ -17,7 +17,7 @@ class CheckinsService {
     */
   async details(checkinId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const details = await request({
         url: (`${apiConfig.url}${apiConfig.checkins.details}`).replace('CHECKIN_ID', checkinId), method: 'GET', json: true, qs,
@@ -38,7 +38,7 @@ class CheckinsService {
     */
   async resolve(options = {}) {
     try {
-      const qs = Object.assign(this._configthis._config, options);
+      const qs = { ...this._config, ...options };
 
       const resolve = await request({
         url: (`${apiConfig.url}${apiConfig.checkins.resolve}`), method: 'GET', json: true, qs,
@@ -59,7 +59,7 @@ class CheckinsService {
     */
   async add(options = {}) {
     try {
-      const qs = Object.assign(this._configthis._config, options);
+      const qs = { ...this._config, ...options };
 
       const add = await request({
         url: (`${apiConfig.url}${apiConfig.checkins.add}`), method: 'POST', json: true, qs,
@@ -81,7 +81,7 @@ class CheckinsService {
     */
   async like(checkinId, options) {
     try {
-      const qs = Object.assign(this._configthis._config, options);
+      const qs = { ...this._config, ...options };
 
       const like = await request({
         url: (`${apiConfig.url}${apiConfig.checkins.like}`).replace('CHECKIN_ID', checkinId), method: 'POST', json: true, qs,
@@ -103,7 +103,7 @@ class CheckinsService {
     */
   async addpost(checkinId, options) {
     try {
-      const qs = Object.assign(this._configthis._config, options);
+      const qs = { ...this._config, ...options };
 
       const addpost = await request({
         url: (`${apiConfig.url}${apiConfig.checkins.addpost}`).replace('CHECKIN_ID', checkinId), method: 'POST', json: true, qs,

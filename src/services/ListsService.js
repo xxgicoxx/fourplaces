@@ -17,7 +17,7 @@ class ListsService {
     */
   async details(listId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const details = await request({
         url: (`${apiConfig.url}${apiConfig.lists.details}`).replace('LIST_ID', listId), method: 'GET', json: true, qs,
@@ -38,7 +38,7 @@ class ListsService {
     */
   async add(options = {}) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const add = await request({
         url: (`${apiConfig.url}${apiConfig.lists.add}`), method: 'POST', json: true, qs,
@@ -60,7 +60,7 @@ class ListsService {
     */
   async additem(listId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const additem = await request({
         url: (`${apiConfig.url}${apiConfig.lists.additem}`).replace('LIST_ID', listId), method: 'POST', json: true, qs,
@@ -82,7 +82,7 @@ class ListsService {
     */
   async share(listId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const share = await request({
         url: (`${apiConfig.url}${apiConfig.lists.share}`).replace('LIST_ID', listId), method: 'POST', json: true, qs,

@@ -16,7 +16,7 @@ class AuthService {
     */
   async authenticate(options = {}) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const authenticate = await request({
         url: (`${apiConfig.authenticate}`), method: 'GET', json: true, qs,
@@ -38,7 +38,7 @@ class AuthService {
     */
   async accessToken(code, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const accessToken = await request({
         url: (`${apiConfig.access_token}?code=${code}`), method: 'GET', json: true, qs,

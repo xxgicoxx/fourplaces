@@ -16,7 +16,7 @@ class VenuesService {
     */
   async search(options = {}) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const search = await request({
         url: (`${apiConfig.url}${apiConfig.venues.search}`), method: 'GET', json: true, qs,
@@ -37,7 +37,7 @@ class VenuesService {
     */
   async explore(options = {}) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const explore = await request({
         url: (`${apiConfig.url}${apiConfig.venues.explore}`), method: 'GET', json: true, qs,
@@ -58,7 +58,7 @@ class VenuesService {
     */
   async trending(options = {}) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const trending = await request({
         url: (`${apiConfig.url}${apiConfig.venues.trending}`), method: 'GET', json: true, qs,
@@ -79,7 +79,7 @@ class VenuesService {
     */
   async suggestcompletion(options = {}) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const suggestcompletion = await request({
         url: (`${apiConfig.url}${apiConfig.venues.suggestcompletion}`), method: 'GET', json: true, qs,
@@ -100,7 +100,7 @@ class VenuesService {
     */
   async categories(options = {}) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const categories = await request({
         url: (`${apiConfig.url}${apiConfig.venues.categories}`), method: 'GET', json: true, qs,
@@ -122,7 +122,7 @@ class VenuesService {
     */
   async select(venueId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const select = await request({
         url: (`${apiConfig.url}${apiConfig.venues.select}`).replace('VENUE_ID', venueId), method: 'GET', json: true, qs,
@@ -144,7 +144,7 @@ class VenuesService {
     */
   async likes(venueId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const likes = await request({
         url: (`${apiConfig.url}${apiConfig.venues.likes}`).replace('VENUE_ID', venueId), method: 'GET', json: true, qs,
@@ -166,7 +166,7 @@ class VenuesService {
     */
   async similar(venueId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const similar = await request({
         url: (`${apiConfig.url}${apiConfig.venues.similar}`).replace('VENUE_ID', venueId), method: 'GET', json: true, qs,
@@ -188,7 +188,7 @@ class VenuesService {
     */
   async nextvenues(venueId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const nextvenues = await request({
         url: (`${apiConfig.url}${apiConfig.venues.nextvenues}`).replace('VENUE_ID', venueId), method: 'GET', json: true, qs,
@@ -210,7 +210,7 @@ class VenuesService {
     */
   async listed(venueId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const listed = await request({
         url: (`${apiConfig.url}${apiConfig.venues.listed}`).replace('VENUE_ID', venueId), method: 'GET', json: true, qs,
@@ -232,7 +232,7 @@ class VenuesService {
     */
   async details(venueId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const details = await request({
         url: (`${apiConfig.url}${apiConfig.venues.details}`).replace('VENUE_ID', venueId), method: 'GET', json: true, qs,
@@ -254,7 +254,7 @@ class VenuesService {
     */
   async photos(venueId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const photos = await request({
         url: (`${apiConfig.url}${apiConfig.venues.photos}`).replace('VENUE_ID', venueId), method: 'GET', json: true, qs,
@@ -276,7 +276,7 @@ class VenuesService {
     */
   async tips(venueId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const tips = await request({
         url: (`${apiConfig.url}${apiConfig.venues.tips}`).replace('VENUE_ID', venueId), method: 'GET', json: true, qs,
@@ -298,7 +298,7 @@ class VenuesService {
     */
   async hours(venueId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const hours = await request({
         url: (`${apiConfig.url}${apiConfig.venues.hours}`).replace('VENUE_ID', venueId), method: 'GET', json: true, qs,
@@ -320,7 +320,7 @@ class VenuesService {
     */
   async menu(venueId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const menu = await request({
         url: (`${apiConfig.url}${apiConfig.venues.menu}`).replace('VENUE_ID', venueId), method: 'GET', json: true, qs,
@@ -342,7 +342,7 @@ class VenuesService {
     */
   async links(venueId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const links = await request({
         url: (`${apiConfig.url}${apiConfig.venues.links}`).replace('VENUE_ID', venueId), method: 'GET', json: true, qs,
@@ -364,7 +364,7 @@ class VenuesService {
     */
   async events(venueId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const events = await request({
         url: (`${apiConfig.url}${apiConfig.venues.events}`).replace('VENUE_ID', venueId), method: 'GET', json: true, qs,
@@ -385,7 +385,7 @@ class VenuesService {
     */
   async timeseries(options = {}) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const timeseries = await request({
         url: (`${apiConfig.url}${apiConfig.venues.timeseries}`), method: 'GET', json: true, qs,
@@ -407,7 +407,7 @@ class VenuesService {
     */
   async stats(options = {}) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const stats = await request({
         url: (`${apiConfig.url}${apiConfig.venues.stats}`), method: 'GET', json: true, qs,
@@ -428,7 +428,7 @@ class VenuesService {
     */
   async managed(options = {}) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const managed = await request({
         url: (`${apiConfig.url}${apiConfig.venues.managed}`), method: 'GET', json: true, qs,
@@ -449,7 +449,7 @@ class VenuesService {
     */
   async add(options = {}) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const add = await request({
         url: (`${apiConfig.url}${apiConfig.venues.add}`), method: 'GET', json: true, qs,
@@ -471,7 +471,7 @@ class VenuesService {
     */
   async claim(venueId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const claim = await request({
         url: (`${apiConfig.url}${apiConfig.venues.claim}`).replace('VENUE_ID', venueId), method: 'GET', json: true, qs,
@@ -493,7 +493,7 @@ class VenuesService {
     */
   async flag(venueId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const flag = await request({
         url: (`${apiConfig.url}${apiConfig.venues.flag}`).replace('VENUE_ID', venueId), method: 'GET', json: true, qs,
@@ -515,7 +515,7 @@ class VenuesService {
     */
   async proposeedit(venueId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const proposeedit = await request({
         url: (`${apiConfig.url}${apiConfig.venues.proposeedit}`).replace('VENUE_ID', venueId), method: 'POST', json: true, qs,
@@ -537,7 +537,7 @@ class VenuesService {
     */
   async like(venueId, options) {
     try {
-      const qs = Object.assign(this._config, options);
+      const qs = { ...this._config, ...options };
 
       const like = await request({
         url: (`${apiConfig.url}${apiConfig.venues.like}`).replace('VENUE_ID', venueId), method: 'GET', json: true, qs,
