@@ -1,6 +1,6 @@
 const request = require('request-promise-native');
 
-const apiConfig = require('../configs/api');
+const { apiConfig } = require('../configs');
 
 class CheckinsService {
   constructor(config) {

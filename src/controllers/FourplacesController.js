@@ -1,4 +1,4 @@
-const apiConfig = require('../configs/api');
+const { apiConfig } = require('../configs');
 
 const {
   AuthService,
