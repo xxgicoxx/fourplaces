@@ -35,10 +35,8 @@ const api = {
   users: {
     details: '/users/USER_ID',
     checkins: '/users/USER_ID/checkins',
-    friends: '/users/USER_ID/friends',
     photos: '/users/USER_ID/photos',
     venuehistory: '/users/USER_ID/venuehistory',
-    tastes: '/users/USER_ID/tastes',
     venuelikes: '/users/USER_ID/venuelikes',
     lists: '/users/USER_ID/lists',
   },

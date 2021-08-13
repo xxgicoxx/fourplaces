@@ -1,4 +1,4 @@
-const request = require('request-promise-native');
+const { request } = require('../utils');
 
 const { apiConfig } = require('../configs');
 
@@ -8,45 +8,37 @@ class AuthService {
   }
 
   /**
-    * /authenticate?client_id=YOUR_CLIENT_ID&response_type=code&redirect_uri=YOUR_REGISTERED_REDIRECT_URI
-    *
-    * @see https://developer.foursquare.com/docs/api/configuration/authentication
-    * @param {!Object} options options
-    * @returns {Promise} return Promise
-    */
-  async authenticate(options = {}) {
+   * /authenticate?client_id=CLIENT_ID&response_type=code&redirect_uri=REDIRECT_URI
+   *
+   * @see https://developer.foursquare.com/docs/places-api/authentication/
+   * @returns {Promise} Promise
+   */
+  async authenticate() {
     try {
-      const qs = { ...this._config, ...options };
-
-      const authenticate = await request({
-        url: (`${apiConfig.authenticate}`), method: 'GET', json: true, qs,
-      });
-
-      return authenticate;
-    } catch (ex) {
-      throw new Error(ex);
+      return { url: `https://foursquare.com/oauth2/authenticate?client_id=${this._config.client_id}&response_type=code&redirect_uri=${this._config.redirect_uri}` };
+    } catch (error) {
+      throw new Error(error);
     }
   }
 
   /**
-    * /access_token?client_id=YOUR_CLIENT_ID&client_secret=YOUR_CLIENT_SECRET&grant_type=authorization_code&redirect_uri=YOUR_REGISTERED_REDIRECT_URI&code=CODE
-    *
-    * @see https://developer.foursquare.com/docs/api/configuration/authentication
-    * @param {!string} code code
-    * @param {!Object} options options
-    * @returns {Promise} return Promise
-    */
-  async accessToken(code, options) {
+   * /access_token?client_id=CLIENT_ID&client_secret=CLIENT_SECRET&grant_type=authorization_code&redirect_uri=REDIRECT_URI&code=CODE
+   *
+   * @see https://developer.foursquare.com/docs/places-api/authentication/
+   * @param {Object} options Request params
+   * @returns {Promise} Promise
+   */
+  async accessToken(options) {
     try {
-      const qs = { ...this._config, ...options };
+      const qs = Object.assign(this._config, options);
 
       const accessToken = await request({
-        url: (`${apiConfig.access_token}?code=${code}`), method: 'GET', json: true, qs,
+        url: (`${apiConfig.access_token}`), qs,
       });
 
       return accessToken;
-    } catch (ex) {
-      throw new Error(ex);
+    } catch (error) {
+      throw new Error(error);
     }
   }
 }

@@ -1,4 +1,4 @@
-const request = require('request-promise-native');
+const { request } = require('../utils');
 
 const { apiConfig } = require('../configs');
 
@@ -8,110 +8,110 @@ class CheckinsService {
   }
 
   /**
-    * /checkins/CHECKIN_ID
-    *
-    * @see https://developer.foursquare.com/docs/api/checkins/details
-    * @param {!string} checkinId
-    * @param {Object} options request params
-    * @returns {Promise} return Promise
-    */
+   * /checkins/CHECKIN_ID
+   *
+   * @see https://developer.foursquare.com/docs/api-reference/checkins/details
+   * @param {string} checkinId Check-in ID
+   * @param {Object} options Request params
+   * @returns {Promise} Promise
+   */
   async details(checkinId, options) {
     try {
-      const qs = { ...this._config, ...options };
+      const qs = Object.assign(this._config, options);
 
       const details = await request({
-        url: (`${apiConfig.url}${apiConfig.checkins.details}`).replace('CHECKIN_ID', checkinId), method: 'GET', json: true, qs,
+        url: (`${apiConfig.url}${apiConfig.checkins.details}`).replace('CHECKIN_ID', checkinId), qs,
       });
 
       return details;
-    } catch (ex) {
-      throw new Error(ex);
+    } catch (error) {
+      throw new Error(error);
     }
   }
 
   /**
-    * /checkins/resolve
-    *
-    * @see https://developer.foursquare.com/docs/api/checkins/resolve
-    * @param {!Object} options request params
-    * @returns {Promise} return Promise
-    */
-  async resolve(options = {}) {
+   * /checkins/resolve
+   *
+   * @see https://developer.foursquare.com/docs/api-reference/checkins/resolve
+   * @param {Object} options Request params
+   * @returns {Promise} Promise
+   */
+  async resolve(options) {
     try {
-      const qs = { ...this._config, ...options };
+      const qs = Object.assign(this._config, options);
 
       const resolve = await request({
-        url: (`${apiConfig.url}${apiConfig.checkins.resolve}`), method: 'GET', json: true, qs,
+        url: (`${apiConfig.url}${apiConfig.checkins.resolve}`), qs,
       });
 
       return resolve;
-    } catch (ex) {
-      throw new Error(ex);
+    } catch (error) {
+      throw new Error(error);
     }
   }
 
   /**
-    * /checkins/add
-    *
-    * @see https://developer.foursquare.com/docs/api/checkins/add
-    * @param {!Object} options request params
-    * @returns {Promise} return Promise
-    */
-  async add(options = {}) {
+   * /checkins/add
+   *
+   * @see https://developer.foursquare.com/docs/api-reference/checkins/add
+   * @param {Object} options Request params
+   * @returns {Promise} Promise
+   */
+  async add(options) {
     try {
-      const qs = { ...this._config, ...options };
+      const qs = Object.assign(this._config, options);
 
       const add = await request({
-        url: (`${apiConfig.url}${apiConfig.checkins.add}`), method: 'POST', json: true, qs,
+        url: (`${apiConfig.url}${apiConfig.checkins.add}`), method: 'POST', qs,
       });
 
       return add;
-    } catch (ex) {
-      throw new Error(ex);
+    } catch (error) {
+      throw new Error(error);
     }
   }
 
   /**
-    * /checkins/CHECKIN_ID/like
-    *
-    * @see https://developer.foursquare.com/docs/api/checkins/like
-    * @param {!string} checkinId
-    * @param {Object} options request params
-    * @returns {Promise} return Promise
-    */
+   * /checkins/CHECKIN_ID/like
+   *
+   * @see https://developer.foursquare.com/docs/api-reference/checkins/like
+   * @param {string} checkinId Check-in ID
+   * @param {Object} options Request params
+   * @returns {Promise} Promise
+   */
   async like(checkinId, options) {
     try {
-      const qs = { ...this._config, ...options };
+      const qs = Object.assign(this._config, options);
 
       const like = await request({
-        url: (`${apiConfig.url}${apiConfig.checkins.like}`).replace('CHECKIN_ID', checkinId), method: 'POST', json: true, qs,
+        url: (`${apiConfig.url}${apiConfig.checkins.like}`).replace('CHECKIN_ID', checkinId), method: 'POST', qs,
       });
 
       return like;
-    } catch (ex) {
-      throw new Error(ex);
+    } catch (error) {
+      throw new Error(error);
     }
   }
 
   /**
-    * /checkins/CHECKIN_ID/addpost
-    *
-    * @see https://developer.foursquare.com/docs/api/checkins/addpost
-    * @param {!string} checkinId
-    * @param {Object} options request params
-    * @returns {Promise} return Promise
-    */
+   * /checkins/CHECKIN_ID/addpost
+   *
+   * @see https://developer.foursquare.com/docs/api-reference/checkins/addpost
+   * @param {string} checkinId Check-in ID
+   * @param {Object} options Request params
+   * @returns {Promise} Promise
+   */
   async addpost(checkinId, options) {
     try {
-      const qs = { ...this._config, ...options };
+      const qs = Object.assign(this._config, options);
 
       const addpost = await request({
-        url: (`${apiConfig.url}${apiConfig.checkins.addpost}`).replace('CHECKIN_ID', checkinId), method: 'POST', json: true, qs,
+        url: (`${apiConfig.url}${apiConfig.checkins.addpost}`).replace('CHECKIN_ID', checkinId), method: 'POST', qs,
       });
 
       return addpost;
-    } catch (ex) {
-      throw new Error(ex);
+    } catch (error) {
+      throw new Error(error);
     }
   }
 }

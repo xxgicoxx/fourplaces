@@ -1,4 +1,4 @@
-const request = require('request-promise-native');
+const { request } = require('../utils');
 
 const { apiConfig } = require('../configs');
 
@@ -8,45 +8,45 @@ class TipsService {
   }
 
   /**
-    * /tips/TIP_ID
-    *
-    * @see https://developer.foursquare.com/docs/api/tips/details
-    * @param {!string} tipId
-    * @param {Object} options request params
-    * @returns {Promise} return Promise
-    */
+   * /tips/TIP_ID
+   *
+   * @see https://developer.foursquare.com/docs/api-reference/tips/details
+   * @param {string} tipId Tip ID
+   * @param {Object} options Request params
+   * @returns {Promise} Promise
+   */
   async details(tipId, options) {
     try {
-      const qs = { ...this._config, ...options };
+      const qs = Object.assign(this._config, options);
 
       const details = await request({
-        url: (`${apiConfig.url}${apiConfig.tips.details}`).replace('TIP_ID', tipId), method: 'GET', json: true, qs,
+        url: (`${apiConfig.url}${apiConfig.tips.details}`).replace('TIP_ID', tipId), qs,
       });
 
       return details;
-    } catch (ex) {
-      throw new Error(ex);
+    } catch (error) {
+      throw new Error(error);
     }
   }
 
   /**
-    * /tips/add
-    *
-    * @see https://developer.foursquare.com/docs/api/tips/add
-    * @param {!Object} options request params
-    * @returns {Promise} return Promise
-    */
-  async add(options = {}) {
+   * /tips/add
+   *
+   * @see https://developer.foursquare.com/docs/api-reference/tips/add
+   * @param {Object} options Request params
+   * @returns {Promise} Promise
+   */
+  async add(options) {
     try {
-      const qs = { ...this._config, ...options };
+      const qs = Object.assign(this._config, options);
 
       const add = await request({
-        url: (`${apiConfig.url}${apiConfig.tips.add}`), method: 'POST', json: true, qs,
+        url: (`${apiConfig.url}${apiConfig.tips.add}`), method: 'POST', qs,
       });
 
       return add;
-    } catch (ex) {
-      throw new Error(ex);
+    } catch (error) {
+      throw new Error(error);
     }
   }
 }

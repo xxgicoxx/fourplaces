@@ -12,17 +12,16 @@ const {
 
 class FourplacesController {
   /**
-    * Fourplaces config
-    *
-    * @param {!Object} config configs
-    * @param {!string} config.client_id client id
-    * @param {!string} config.client_secret client secret
-    * @param {string} [config.redirect_uri = ''] redirect uri
-    * @param {string} [config.registered_redirect_uri = ''] registered redirect uri
-    * @param {string} [config.locale = 'en'] locale
-    * @param {string} [config.v = '20180323'] version
-    */
-  constructor(config = {}) {
+   * Fourplaces config
+   *
+   * @param {Object} config Configs
+   * @param {string} config.client_id Client id
+   * @param {string} config.client_secret Client secret
+   * @param {string} [config.redirect_uri = ''] Redirect uri
+   * @param {string} [config.locale = 'en'] Locale
+   * @param {string} [config.v = '20180323'] Version
+   */
+  constructor(config) {
     this._config = config;
 
     this._config.v = config.v || apiConfig.version;
@@ -39,51 +38,50 @@ class FourplacesController {
   }
 
   /**
-    * This is used when you require a Foursquare user e.g. to get all the checkins for a given user
-    */
+   * This is used when you require a Foursquare user e.g. to get all the checkins for a given user
+   */
   auth() {
     return this._authService;
   }
 
   /**
-    * This is used when you require a Foursquare checkins e.g. to get details of a check-in
-    *
-    */
+   * This is used when you require a Foursquare checkins e.g. to get details of a check-in
+   */
   checkins() {
     return this._checkinsService;
   }
 
   /**
-    * This is used when you require a Foursquare lists e.g. to get details of a list
-    */
+   * This is used when you require a Foursquare lists e.g. to get details of a list
+   */
   lists() {
     return this._listsService;
   }
 
   /**
-    * This is used when you require a Foursquare photos e.g. to get the details of a photo
-    */
+   * This is used when you require a Foursquare photos e.g. to get the details of a photo
+   */
   photos() {
     return this._photosService;
   }
 
   /**
-    * This is used when you require a Foursquare tips e.g. to get details of a tip
-    */
+   * This is used when you require a Foursquare tips e.g. to get details of a tip
+   */
   tips() {
     return this._tipsService;
   }
 
   /**
-    * This is used when you require a Foursquare users e.g. to get details of a user
-    */
+   * This is used when you require a Foursquare users e.g. to get details of a user
+   */
   users() {
     return this._usersService;
   }
 
   /**
-    * This is used when you require a Foursquare venues e.g. to get details of a venue
-    */
+   * This is used when you require a Foursquare venues e.g. to get details of a venue
+   */
   venues() {
     return this._venuesService;
   }

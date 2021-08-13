@@ -1,24 +1,41 @@
 # Fourplaces
-Foursquare Places API wrapper for Node JS.
+Foursquare Places API wrapper for Node.js.
 
 <p align="center">
   <img src="https://i.imgur.com/18CztaR.png">
 </p>
 
-[Documentation](https://developer.foursquare.com/docs/api/endpoints)
+# Docs
+[Documentation](https://developer.foursquare.com/docs/places-api/endpoints)
 
-[Authentication](https://developer.foursquare.com/docs/api/configuration/authentication)
+[Authentication](https://developer.foursquare.com/docs/places-api/authentication)
 
-[Internationalization](https://developer.foursquare.com/docs/api/configuration/internationalization)
+[Internationalization](https://developer.foursquare.com/docs/places-api/internationalization)
 
-[Versioning](https://developer.foursquare.com/docs/api/configuration/versioning)
+[Versioning](https://developer.foursquare.com/docs/places-api/versioning)
 
-### Installation
+# Prerequisites
+* [Node.js](https://nodejs.org/en/)
+
+# Installation
 ````
 npm install fourplaces
 ````
 
-### Examples
+# Credentials
+### 1. Foursquare
+````
+# Account
+Create an Foursquare account on https://foursquare.com/developers/signup.
+
+# Create App
+Create A New Foursquare App on https://pt.foursquare.com/developers/apps.
+
+# Client ID and Secret
+Obtain an Client ID and Secret on https://pt.foursquare.com/developers/apps.
+````
+
+# Examples
 ```javascript
 const Fourplaces = require('fourplaces');
 
@@ -26,64 +43,29 @@ const fourplaces = new Fourplaces({
     client_id: 'CLIENT_ID',
     client_secret: 'CLIENT_SECRET',
     redirect_uri: 'REDIRECT_URI',
-    registered_redirect_uri: 'REGISTERED_REDIRECT_URI',
     locale: 'LOCALE',
     version: 'VERSION'
 });
 
-fp.venues().explore({
-  query: 'Café',
-  near: 'Pato Branco, PR',
-}).then((response) => {
-  console.log(response);
-}).catch((error) => {
-  console.error(error);
-});
+(async () => {
+  try {
+    const venues = await fourplaces.venues().explore({
+      query: 'Café',
+      near: 'Pato Branco, PR',
+    });
+
+    console.log(venues);
+  } catch (error) {
+    console.error(error);
+  }
+})();
 ```
 
-### Response example
-```json
-{
-  "meta": { 
-    "code": 200, 
-    "requestId": "5e46a32971c428001b1bc663" 
-  },
-  "response": {
-    "suggestedFilters": { 
-      "header": "Tap to show:", 
-      "filters": [] 
-    },
-    "geocode": {
-      "what": "",
-      "where": "pato branco pr",
-      "center": [],
-      "displayString": "Pato Branco, PR, Brazil",
-      "cc": "BR",
-      "geometry": [],
-      "slug": "pato-branco-estado-do-parana-brazil",
-      "longId": "72057594041382754"
-    },
-    "headerLocation": "Pato Branco",
-    "headerFullLocation": "Pato Branco",
-    "headerLocationGranularity": "city",
-    "query": "cafe",
-    "totalResults": "39",
-    "suggestedBounds": { 
-      "ne": [], 
-      "sw": [] 
-    },
-    "groups": [ 
-      [] 
-    ]
-  }
-}
-````
-
-### Built With
+# Built With
 * [Node.js](https://nodejs.org/en/)
 
-### Authors
-* **Giovani de Oliveira** - [xxgicoxx](https://github.com/xxgicoxx)
+# Authors
+* [xxgicoxx](https://github.com/xxgicoxx)
 
-### Acknowledgments
-* [FlatIcon](https://www.flaticon.com/) - Icon
+# Acknowledgments
+* [FlatIcon](https://www.flaticon.com/)
