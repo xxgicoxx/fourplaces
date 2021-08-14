@@ -4,7 +4,7 @@ const { apiConfig } = require('../configs');
 
 class TipsService {
   constructor(config) {
-    this._config = config;
+    this.config = config;
   }
 
   /**
@@ -16,17 +16,13 @@ class TipsService {
    * @returns {Promise} Promise
    */
   async details(tipId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const details = await request({
-        url: (`${apiConfig.url}${apiConfig.tips.details}`).replace('TIP_ID', tipId), qs,
-      });
+    const details = await request({
+      url: (`${apiConfig.url}${apiConfig.tips.details}`).replace('TIP_ID', tipId), qs,
+    });
 
-      return details;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return details;
   }
 
   /**
@@ -37,17 +33,13 @@ class TipsService {
    * @returns {Promise} Promise
    */
   async add(options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const add = await request({
-        url: (`${apiConfig.url}${apiConfig.tips.add}`), method: 'POST', qs,
-      });
+    const add = await request({
+      url: (`${apiConfig.url}${apiConfig.tips.add}`), method: 'POST', qs,
+    });
 
-      return add;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return add;
   }
 }
 

@@ -4,7 +4,7 @@ const { apiConfig } = require('../configs');
 
 class UsersService {
   constructor(config) {
-    this._config = config;
+    this.config = config;
   }
 
   /**
@@ -16,17 +16,13 @@ class UsersService {
    * @returns {Promise} Promise
    */
   async details(userId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const details = await request({
-        url: (`${apiConfig.url}${apiConfig.users.details}`).replace('USER_ID', userId), qs,
-      });
+    const details = await request({
+      url: (`${apiConfig.url}${apiConfig.users.details}`).replace('USER_ID', userId), qs,
+    });
 
-      return details;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return details;
   }
 
   /**
@@ -38,17 +34,13 @@ class UsersService {
    * @returns {Promise} Promise
    */
   async checkins(userId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const checkins = await request({
-        url: (`${apiConfig.url}${apiConfig.users.checkins}`).replace('USER_ID', userId), qs,
-      });
+    const checkins = await request({
+      url: (`${apiConfig.url}${apiConfig.users.checkins}`).replace('USER_ID', userId), qs,
+    });
 
-      return checkins;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return checkins;
   }
 
   /**
@@ -60,17 +52,13 @@ class UsersService {
    * @returns {Promise} Promise
    */
   async photos(userId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const photos = await request({
-        url: (`${apiConfig.url}${apiConfig.users.photos}`).replace('USER_ID', userId), qs,
-      });
+    const photos = await request({
+      url: (`${apiConfig.url}${apiConfig.users.photos}`).replace('USER_ID', userId), qs,
+    });
 
-      return photos;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return photos;
   }
 
   /**
@@ -82,17 +70,13 @@ class UsersService {
    * @returns {Promise} Promise
    */
   async venuehistory(userId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const venuehistory = await request({
-        url: (`${apiConfig.url}${apiConfig.users.venuehistory}`).replace('USER_ID', userId), qs,
-      });
+    const venuehistory = await request({
+      url: (`${apiConfig.url}${apiConfig.users.venuehistory}`).replace('USER_ID', userId), qs,
+    });
 
-      return venuehistory;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return venuehistory;
   }
 
   /**
@@ -104,17 +88,13 @@ class UsersService {
    * @returns {Promise} Promise
    */
   async venuelikes(userId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const venuelikes = await request({
-        url: (`${apiConfig.url}${apiConfig.users.venuelikes}`).replace('USER_ID', userId), qs,
-      });
+    const venuelikes = await request({
+      url: (`${apiConfig.url}${apiConfig.users.venuelikes}`).replace('USER_ID', userId), qs,
+    });
 
-      return venuelikes;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return venuelikes;
   }
 
   /**
@@ -126,17 +106,13 @@ class UsersService {
    * @returns {Promise} Promise
    */
   async lists(userId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const lists = await request({
-        url: (`${apiConfig.url}${apiConfig.users.lists}`).replace('USER_ID', userId), qs,
-      });
+    const lists = await request({
+      url: (`${apiConfig.url}${apiConfig.users.lists}`).replace('USER_ID', userId), qs,
+    });
 
-      return lists;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return lists;
   }
 }
 

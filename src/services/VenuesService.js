@@ -4,7 +4,7 @@ const { apiConfig } = require('../configs');
 
 class VenuesService {
   constructor(config) {
-    this._config = config;
+    this.config = config;
   }
 
   /**
@@ -15,17 +15,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async search(options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const search = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.search}`), qs,
-      });
+    const search = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.search}`), qs,
+    });
 
-      return search;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return search;
   }
 
   /**
@@ -36,17 +32,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async explore(options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const explore = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.explore}`), qs,
-      });
+    const explore = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.explore}`), qs,
+    });
 
-      return explore;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return explore;
   }
 
   /**
@@ -57,17 +49,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async trending(options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const trending = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.trending}`), qs,
-      });
+    const trending = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.trending}`), qs,
+    });
 
-      return trending;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return trending;
   }
 
   /**
@@ -78,17 +66,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async suggestcompletion(options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const suggestcompletion = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.suggestcompletion}`), qs,
-      });
+    const suggestcompletion = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.suggestcompletion}`), qs,
+    });
 
-      return suggestcompletion;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return suggestcompletion;
   }
 
   /**
@@ -99,17 +83,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async categories(options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const categories = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.categories}`), qs,
-      });
+    const categories = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.categories}`), qs,
+    });
 
-      return categories;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return categories;
   }
 
   /**
@@ -121,17 +101,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async select(venueId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const select = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.select}`).replace('VENUE_ID', venueId), qs,
-      });
+    const select = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.select}`).replace('VENUE_ID', venueId), qs,
+    });
 
-      return select;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return select;
   }
 
   /**
@@ -143,17 +119,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async likes(venueId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const likes = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.likes}`).replace('VENUE_ID', venueId), qs,
-      });
+    const likes = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.likes}`).replace('VENUE_ID', venueId), qs,
+    });
 
-      return likes;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return likes;
   }
 
   /**
@@ -165,17 +137,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async similar(venueId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const similar = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.similar}`).replace('VENUE_ID', venueId), qs,
-      });
+    const similar = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.similar}`).replace('VENUE_ID', venueId), qs,
+    });
 
-      return similar;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return similar;
   }
 
   /**
@@ -187,17 +155,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async nextvenues(venueId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const nextvenues = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.nextvenues}`).replace('VENUE_ID', venueId), qs,
-      });
+    const nextvenues = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.nextvenues}`).replace('VENUE_ID', venueId), qs,
+    });
 
-      return nextvenues;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return nextvenues;
   }
 
   /**
@@ -209,17 +173,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async listed(venueId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const listed = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.listed}`).replace('VENUE_ID', venueId), qs,
-      });
+    const listed = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.listed}`).replace('VENUE_ID', venueId), qs,
+    });
 
-      return listed;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return listed;
   }
 
   /**
@@ -231,17 +191,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async details(venueId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const details = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.details}`).replace('VENUE_ID', venueId), qs,
-      });
+    const details = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.details}`).replace('VENUE_ID', venueId), qs,
+    });
 
-      return details;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return details;
   }
 
   /**
@@ -253,17 +209,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async photos(venueId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const photos = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.photos}`).replace('VENUE_ID', venueId), qs,
-      });
+    const photos = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.photos}`).replace('VENUE_ID', venueId), qs,
+    });
 
-      return photos;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return photos;
   }
 
   /**
@@ -275,17 +227,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async tips(venueId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const tips = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.tips}`).replace('VENUE_ID', venueId), qs,
-      });
+    const tips = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.tips}`).replace('VENUE_ID', venueId), qs,
+    });
 
-      return tips;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return tips;
   }
 
   /**
@@ -297,17 +245,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async hours(venueId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const hours = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.hours}`).replace('VENUE_ID', venueId), qs,
-      });
+    const hours = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.hours}`).replace('VENUE_ID', venueId), qs,
+    });
 
-      return hours;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return hours;
   }
 
   /**
@@ -319,17 +263,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async menu(venueId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const menu = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.menu}`).replace('VENUE_ID', venueId), qs,
-      });
+    const menu = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.menu}`).replace('VENUE_ID', venueId), qs,
+    });
 
-      return menu;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return menu;
   }
 
   /**
@@ -341,17 +281,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async links(venueId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const links = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.links}`).replace('VENUE_ID', venueId), qs,
-      });
+    const links = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.links}`).replace('VENUE_ID', venueId), qs,
+    });
 
-      return links;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return links;
   }
 
   /**
@@ -363,17 +299,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async events(venueId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const events = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.events}`).replace('VENUE_ID', venueId), qs,
-      });
+    const events = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.events}`).replace('VENUE_ID', venueId), qs,
+    });
 
-      return events;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return events;
   }
 
   /**
@@ -384,17 +316,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async timeseries(options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const timeseries = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.timeseries}`), qs,
-      });
+    const timeseries = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.timeseries}`), qs,
+    });
 
-      return timeseries;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return timeseries;
   }
 
   /**
@@ -406,17 +334,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async stats(options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const stats = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.stats}`), qs,
-      });
+    const stats = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.stats}`), qs,
+    });
 
-      return stats;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return stats;
   }
 
   /**
@@ -427,17 +351,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async managed(options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const managed = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.managed}`), qs,
-      });
+    const managed = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.managed}`), qs,
+    });
 
-      return managed;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return managed;
   }
 
   /**
@@ -448,17 +368,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async add(options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const add = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.add}`), qs,
-      });
+    const add = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.add}`), qs,
+    });
 
-      return add;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return add;
   }
 
   /**
@@ -470,17 +386,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async claim(venueId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const claim = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.claim}`).replace('VENUE_ID', venueId), qs,
-      });
+    const claim = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.claim}`).replace('VENUE_ID', venueId), qs,
+    });
 
-      return claim;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return claim;
   }
 
   /**
@@ -492,17 +404,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async flag(venueId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const flag = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.flag}`).replace('VENUE_ID', venueId), qs,
-      });
+    const flag = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.flag}`).replace('VENUE_ID', venueId), qs,
+    });
 
-      return flag;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return flag;
   }
 
   /**
@@ -514,17 +422,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async proposeedit(venueId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const proposeedit = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.proposeedit}`).replace('VENUE_ID', venueId), method: 'POST', qs,
-      });
+    const proposeedit = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.proposeedit}`).replace('VENUE_ID', venueId), method: 'POST', qs,
+    });
 
-      return proposeedit;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return proposeedit;
   }
 
   /**
@@ -536,17 +440,13 @@ class VenuesService {
    * @returns {Promise} Promise
    */
   async like(venueId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const like = await request({
-        url: (`${apiConfig.url}${apiConfig.venues.like}`).replace('VENUE_ID', venueId), qs,
-      });
+    const like = await request({
+      url: (`${apiConfig.url}${apiConfig.venues.like}`).replace('VENUE_ID', venueId), qs,
+    });
 
-      return like;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return like;
   }
 }
 

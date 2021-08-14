@@ -4,7 +4,7 @@ const { apiConfig } = require('../configs');
 
 class CheckinsService {
   constructor(config) {
-    this._config = config;
+    this.config = config;
   }
 
   /**
@@ -16,17 +16,13 @@ class CheckinsService {
    * @returns {Promise} Promise
    */
   async details(checkinId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const details = await request({
-        url: (`${apiConfig.url}${apiConfig.checkins.details}`).replace('CHECKIN_ID', checkinId), qs,
-      });
+    const details = await request({
+      url: (`${apiConfig.url}${apiConfig.checkins.details}`).replace('CHECKIN_ID', checkinId), qs,
+    });
 
-      return details;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return details;
   }
 
   /**
@@ -37,17 +33,13 @@ class CheckinsService {
    * @returns {Promise} Promise
    */
   async resolve(options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const resolve = await request({
-        url: (`${apiConfig.url}${apiConfig.checkins.resolve}`), qs,
-      });
+    const resolve = await request({
+      url: (`${apiConfig.url}${apiConfig.checkins.resolve}`), qs,
+    });
 
-      return resolve;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return resolve;
   }
 
   /**
@@ -58,17 +50,13 @@ class CheckinsService {
    * @returns {Promise} Promise
    */
   async add(options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const add = await request({
-        url: (`${apiConfig.url}${apiConfig.checkins.add}`), method: 'POST', qs,
-      });
+    const add = await request({
+      url: (`${apiConfig.url}${apiConfig.checkins.add}`), method: 'POST', qs,
+    });
 
-      return add;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return add;
   }
 
   /**
@@ -80,17 +68,13 @@ class CheckinsService {
    * @returns {Promise} Promise
    */
   async like(checkinId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const like = await request({
-        url: (`${apiConfig.url}${apiConfig.checkins.like}`).replace('CHECKIN_ID', checkinId), method: 'POST', qs,
-      });
+    const like = await request({
+      url: (`${apiConfig.url}${apiConfig.checkins.like}`).replace('CHECKIN_ID', checkinId), method: 'POST', qs,
+    });
 
-      return like;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return like;
   }
 
   /**
@@ -102,17 +86,13 @@ class CheckinsService {
    * @returns {Promise} Promise
    */
   async addpost(checkinId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const addpost = await request({
-        url: (`${apiConfig.url}${apiConfig.checkins.addpost}`).replace('CHECKIN_ID', checkinId), method: 'POST', qs,
-      });
+    const addpost = await request({
+      url: (`${apiConfig.url}${apiConfig.checkins.addpost}`).replace('CHECKIN_ID', checkinId), method: 'POST', qs,
+    });
 
-      return addpost;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return addpost;
   }
 }
 

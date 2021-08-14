@@ -4,7 +4,7 @@ const { apiConfig } = require('../configs');
 
 class ListsService {
   constructor(config) {
-    this._config = config;
+    this.config = config;
   }
 
   /**
@@ -16,17 +16,13 @@ class ListsService {
    * @returns {Promise} Promise
    */
   async details(listId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const details = await request({
-        url: (`${apiConfig.url}${apiConfig.lists.details}`).replace('LIST_ID', listId), qs,
-      });
+    const details = await request({
+      url: (`${apiConfig.url}${apiConfig.lists.details}`).replace('LIST_ID', listId), qs,
+    });
 
-      return details;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return details;
   }
 
   /**
@@ -37,17 +33,13 @@ class ListsService {
    * @returns {Promise} Promise
    */
   async add(options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const add = await request({
-        url: (`${apiConfig.url}${apiConfig.lists.add}`), method: 'POST', qs,
-      });
+    const add = await request({
+      url: (`${apiConfig.url}${apiConfig.lists.add}`), method: 'POST', qs,
+    });
 
-      return add;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return add;
   }
 
   /**
@@ -59,17 +51,13 @@ class ListsService {
    * @returns {Promise} Promise
    */
   async additem(listId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const additem = await request({
-        url: (`${apiConfig.url}${apiConfig.lists.additem}`).replace('LIST_ID', listId), method: 'POST', qs,
-      });
+    const additem = await request({
+      url: (`${apiConfig.url}${apiConfig.lists.additem}`).replace('LIST_ID', listId), method: 'POST', qs,
+    });
 
-      return additem;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return additem;
   }
 
   /**
@@ -81,17 +69,13 @@ class ListsService {
    * @returns {Promise} Promise
    */
   async share(listId, options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const share = await request({
-        url: (`${apiConfig.url}${apiConfig.lists.share}`).replace('LIST_ID', listId), method: 'POST', qs,
-      });
+    const share = await request({
+      url: (`${apiConfig.url}${apiConfig.lists.share}`).replace('LIST_ID', listId), method: 'POST', qs,
+    });
 
-      return share;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return share;
   }
 }
 

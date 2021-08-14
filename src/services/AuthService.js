@@ -4,7 +4,7 @@ const { apiConfig } = require('../configs');
 
 class AuthService {
   constructor(config) {
-    this._config = config;
+    this.config = config;
   }
 
   /**
@@ -14,11 +14,7 @@ class AuthService {
    * @returns {Promise} Promise
    */
   async authenticate() {
-    try {
-      return { url: `https://foursquare.com/oauth2/authenticate?client_id=${this._config.client_id}&response_type=code&redirect_uri=${this._config.redirect_uri}` };
-    } catch (error) {
-      throw new Error(error);
-    }
+    return { url: `https://foursquare.com/oauth2/authenticate?client_id=${this.config.client_id}&response_type=code&redirect_uri=${this.config.redirect_uri}` };
   }
 
   /**
@@ -29,17 +25,13 @@ class AuthService {
    * @returns {Promise} Promise
    */
   async accessToken(options) {
-    try {
-      const qs = Object.assign(this._config, options);
+    const qs = { ...this.config, ...options };
 
-      const accessToken = await request({
-        url: (`${apiConfig.access_token}`), qs,
-      });
+    const accessToken = await request({
+      url: (`${apiConfig.access_token}`), qs,
+    });
 
-      return accessToken;
-    } catch (error) {
-      throw new Error(error);
-    }
+    return accessToken;
   }
 }
 
