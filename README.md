@@ -2,7 +2,7 @@
 Foursquare Places API wrapper for Node.js.
 
 <p align="center">
-  <img src="https://i.imgur.com/18CztaR.png">
+  <img src="assets/imgs/fourplaces.png">
 </p>
 
 # Docs
