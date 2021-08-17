@@ -12,7 +12,8 @@ class CheckinsService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/checkins/details
    * @param {string} checkinId Check-in ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async details(checkinId, options) {
@@ -29,7 +30,8 @@ class CheckinsService {
    * /checkins/resolve
    *
    * @see https://developer.foursquare.com/docs/api-reference/checkins/resolve
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async resolve(options) {
@@ -46,7 +48,8 @@ class CheckinsService {
    * /checkins/add
    *
    * @see https://developer.foursquare.com/docs/api-reference/checkins/add
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async add(options) {
@@ -64,7 +67,8 @@ class CheckinsService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/checkins/like
    * @param {string} checkinId Check-in ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async like(checkinId, options) {
@@ -82,7 +86,8 @@ class CheckinsService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/checkins/addpost
    * @param {string} checkinId Check-in ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async addpost(checkinId, options) {

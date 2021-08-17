@@ -11,7 +11,8 @@ class VenuesService {
    * /venues/search
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/details
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async search(options) {
@@ -28,7 +29,8 @@ class VenuesService {
    * /venues/explore
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/explore
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async explore(options) {
@@ -45,7 +47,8 @@ class VenuesService {
    * /venues/trending
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/trending
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async trending(options) {
@@ -62,7 +65,8 @@ class VenuesService {
    * /venues/suggestcompletion
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/suggestcompletion
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async suggestcompletion(options) {
@@ -79,7 +83,8 @@ class VenuesService {
    * /venues/categories
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/categories
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async categories(options) {
@@ -97,7 +102,8 @@ class VenuesService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/select
    * @param {string} venueId Venue ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async select(venueId, options) {
@@ -115,7 +121,8 @@ class VenuesService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/likes
    * @param {string} venueId Venue ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async likes(venueId, options) {
@@ -133,7 +140,8 @@ class VenuesService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/similar
    * @param {string} venueId Venue ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async similar(venueId, options) {
@@ -151,7 +159,8 @@ class VenuesService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/nextvenues
    * @param {string} venueId Venue ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async nextvenues(venueId, options) {
@@ -169,7 +178,8 @@ class VenuesService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/listed
    * @param {string} venueId Venue ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async listed(venueId, options) {
@@ -187,7 +197,8 @@ class VenuesService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/details
    * @param {string} venueId Venue ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async details(venueId, options) {
@@ -205,7 +216,8 @@ class VenuesService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/photos
    * @param {string} venueId Venue ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async photos(venueId, options) {
@@ -223,7 +235,8 @@ class VenuesService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/tips
    * @param {string} venueId Venue ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async tips(venueId, options) {
@@ -241,7 +254,8 @@ class VenuesService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/hours
    * @param {string} venueId Venue ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async hours(venueId, options) {
@@ -259,7 +273,8 @@ class VenuesService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/menu
    * @param {string} venueId Venue ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async menu(venueId, options) {
@@ -277,7 +292,8 @@ class VenuesService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/links
    * @param {string} venueId Venue ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async links(venueId, options) {
@@ -295,7 +311,8 @@ class VenuesService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/events
    * @param {string} venueId Venue ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async events(venueId, options) {
@@ -312,7 +329,8 @@ class VenuesService {
    * /venues/timeseries
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/timeseries
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async timeseries(options) {
@@ -330,7 +348,8 @@ class VenuesService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/stats
    * @param {string} venueId Venue ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async stats(options) {
@@ -347,7 +366,8 @@ class VenuesService {
    * /venues/managed
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/managed
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async managed(options) {
@@ -364,7 +384,8 @@ class VenuesService {
    * /venues/add
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/add
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async add(options) {
@@ -382,7 +403,8 @@ class VenuesService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/claim
    * @param {string} venueId Venue ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async claim(venueId, options) {
@@ -400,7 +422,8 @@ class VenuesService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/flag
    * @param {string} venueId Venue ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async flag(venueId, options) {
@@ -418,7 +441,8 @@ class VenuesService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/proposeedit
    * @param {string} venueId Venue ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async proposeedit(venueId, options) {
@@ -436,7 +460,8 @@ class VenuesService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/venues/like
    * @param {string} venueId Venue ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async like(venueId, options) {

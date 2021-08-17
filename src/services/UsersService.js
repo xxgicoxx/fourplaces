@@ -12,7 +12,8 @@ class UsersService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/users/details
    * @param {string} userId User ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async details(userId, options) {
@@ -30,7 +31,8 @@ class UsersService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/users/checkins
    * @param {string} userId User ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async checkins(userId, options) {
@@ -48,7 +50,8 @@ class UsersService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/users/photos
    * @param {string} userId User ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async photos(userId, options) {
@@ -66,7 +69,8 @@ class UsersService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/users/venuehistory
    * @param {string} userId User ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async venuehistory(userId, options) {
@@ -84,7 +88,8 @@ class UsersService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/users/venuelikes
    * @param {string} userId User ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async venuelikes(userId, options) {
@@ -102,7 +107,8 @@ class UsersService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/users/lists
    * @param {string} userId User ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async lists(userId, options) {

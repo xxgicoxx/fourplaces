@@ -20,19 +20,19 @@ class FourplacesController {
    * @param {string} [config.v = '20180323'] Version
    */
   constructor(config) {
-    this.config = config;
+    this._config = config;
 
-    this.config.v = config.v || apiConfig.version;
-    this.config.response_type = config.response_type || apiConfig.response_type;
-    this.config.grant_type = config.grant_type || apiConfig.grant_type;
+    this._config.v = config.v || apiConfig.version;
+    this._config.response_type = config.response_type || apiConfig.response_type;
+    this._config.grant_type = config.grant_type || apiConfig.grant_type;
 
-    this._authService = new AuthService(this.config);
-    this._checkinsService = new CheckinsService(this.config);
-    this._listsService = new ListsService(this.config);
-    this._photosService = new PhotosService(this.config);
-    this._tipsService = new TipsService(this.config);
-    this._usersService = new UsersService(this.config);
-    this._venuesService = new VenuesService(this.config);
+    this._authService = new AuthService(this._config);
+    this._checkinsService = new CheckinsService(this._config);
+    this._listsService = new ListsService(this._config);
+    this._photosService = new PhotosService(this._config);
+    this._tipsService = new TipsService(this._config);
+    this._usersService = new UsersService(this._config);
+    this._venuesService = new VenuesService(this._config);
   }
 
   /**

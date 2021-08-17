@@ -12,7 +12,8 @@ class PhotosService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/photos/details
    * @param {string} photoId Photo ID
-   * @param {Object} options request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} return Promise
    */
   async details(photoId, options) {
@@ -29,7 +30,8 @@ class PhotosService {
    * /photos/add
    *
    * @see https://developer.foursquare.com/docs/api-reference/photos/add
-   * @param {Object} options request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} return Promise
    */
   async add(options) {

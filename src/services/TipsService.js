@@ -12,7 +12,8 @@ class TipsService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/tips/details
    * @param {string} tipId Tip ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async details(tipId, options) {
@@ -29,7 +30,8 @@ class TipsService {
    * /tips/add
    *
    * @see https://developer.foursquare.com/docs/api-reference/tips/add
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async add(options) {

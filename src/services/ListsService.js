@@ -12,7 +12,8 @@ class ListsService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/lists/details
    * @param {string} listId List ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async details(listId, options) {
@@ -29,7 +30,8 @@ class ListsService {
    * /lists/add
    *
    * @see https://developer.foursquare.com/docs/api-reference/lists/add
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async add(options) {
@@ -47,7 +49,8 @@ class ListsService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/lists/additem
    * @param {string} listId List ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async additem(listId, options) {
@@ -65,7 +68,8 @@ class ListsService {
    *
    * @see https://developer.foursquare.com/docs/api-reference/lists/share
    * @param {string} listId List ID
-   * @param {Object} options Request params
+   * @param {Object} options Query parameters
+   *
    * @returns {Promise} Promise
    */
   async share(listId, options) {
