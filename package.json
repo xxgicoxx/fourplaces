@@ -1,6 +1,6 @@
 {
   "name": "fourplaces",
-  "displayName": "Fourplaces",
+  "displayName": "fourplaces",
   "version": "2.0.1",
   "description": "Foursquare Places API wrapper for Node.js",
   "author": "Giovani de Oliveira <giovanioliveira@outlook.com.br>",

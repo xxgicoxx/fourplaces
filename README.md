@@ -1,4 +1,4 @@
-# Fourplaces
+# fourplaces
 Foursquare Places API wrapper for Node.js.
 
 <p align="center">
