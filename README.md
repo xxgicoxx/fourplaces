@@ -6,13 +6,13 @@ Foursquare Places API wrapper for Node.js.
 </p>
 
 # Docs
-[Documentation](https://developer.foursquare.com/docs/places-api/endpoints)
+* [Documentation](https://developer.foursquare.com/docs/places-api/endpoints)
 
-[Authentication](https://developer.foursquare.com/docs/places-api/authentication)
+* [Authentication](https://developer.foursquare.com/docs/places-api/authentication)
 
-[Internationalization](https://developer.foursquare.com/docs/places-api/internationalization)
+* [Internationalization](https://developer.foursquare.com/docs/places-api/internationalization)
 
-[Versioning](https://developer.foursquare.com/docs/places-api/versioning)
+* [Versioning](https://developer.foursquare.com/docs/places-api/versioning)
 
 # Prerequisites
 * [Node.js](https://nodejs.org/en/)
