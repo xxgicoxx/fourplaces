@@ -1,4 +1,4 @@
-const { request } = require('../utils');
+const { constants, request } = require('../utils');
 
 const { apiConfig } = require('../configs');
 
@@ -20,7 +20,7 @@ class PhotosService {
     const qs = { ...this.config, ...options };
 
     const details = await request({
-      url: (`${apiConfig.url}${apiConfig.photos.details}`).replace('PHOTO_ID', photoId), qs,
+      url: (`${apiConfig.url}${apiConfig.photos.details}`).replace(constants.PHOTO_ID, photoId), qs,
     });
 
     return details;
@@ -38,7 +38,7 @@ class PhotosService {
     const qs = { ...this.config, ...options };
 
     const add = await request({
-      url: (`${apiConfig.url}${apiConfig.photos.add}`), method: 'POST', qs,
+      url: (`${apiConfig.url}${apiConfig.photos.add}`), method: constants.POST, qs,
     });
 
     return add;

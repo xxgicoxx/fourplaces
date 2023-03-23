@@ -1,4 +1,4 @@
-const { request } = require('../utils');
+const { constants, request } = require('../utils');
 
 const { apiConfig } = require('../configs');
 
@@ -20,7 +20,7 @@ class UsersService {
     const qs = { ...this.config, ...options };
 
     const details = await request({
-      url: (`${apiConfig.url}${apiConfig.users.details}`).replace('USER_ID', userId), qs,
+      url: (`${apiConfig.url}${apiConfig.users.details}`).replace(constants.USER_ID, userId), qs,
     });
 
     return details;
@@ -39,7 +39,7 @@ class UsersService {
     const qs = { ...this.config, ...options };
 
     const checkins = await request({
-      url: (`${apiConfig.url}${apiConfig.users.checkins}`).replace('USER_ID', userId), qs,
+      url: (`${apiConfig.url}${apiConfig.users.checkins}`).replace(constants.USER_ID, userId), qs,
     });
 
     return checkins;
@@ -58,7 +58,7 @@ class UsersService {
     const qs = { ...this.config, ...options };
 
     const photos = await request({
-      url: (`${apiConfig.url}${apiConfig.users.photos}`).replace('USER_ID', userId), qs,
+      url: (`${apiConfig.url}${apiConfig.users.photos}`).replace(constants.USER_ID, userId), qs,
     });
 
     return photos;
@@ -77,7 +77,7 @@ class UsersService {
     const qs = { ...this.config, ...options };
 
     const venuehistory = await request({
-      url: (`${apiConfig.url}${apiConfig.users.venuehistory}`).replace('USER_ID', userId), qs,
+      url: (`${apiConfig.url}${apiConfig.users.venuehistory}`).replace(constants.USER_ID, userId), qs,
     });
 
     return venuehistory;
@@ -96,7 +96,7 @@ class UsersService {
     const qs = { ...this.config, ...options };
 
     const venuelikes = await request({
-      url: (`${apiConfig.url}${apiConfig.users.venuelikes}`).replace('USER_ID', userId), qs,
+      url: (`${apiConfig.url}${apiConfig.users.venuelikes}`).replace(constants.USER_ID, userId), qs,
     });
 
     return venuelikes;
@@ -115,7 +115,7 @@ class UsersService {
     const qs = { ...this.config, ...options };
 
     const lists = await request({
-      url: (`${apiConfig.url}${apiConfig.users.lists}`).replace('USER_ID', userId), qs,
+      url: (`${apiConfig.url}${apiConfig.users.lists}`).replace(constants.USER_ID, userId), qs,
     });
 
     return lists;

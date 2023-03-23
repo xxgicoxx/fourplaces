@@ -15,7 +15,7 @@ class AuthService {
    * @returns {Promise} Promise
    */
   async authenticate() {
-    return { url: `https://foursquare.com/oauth2/authenticate?client_id=${this.config.client_id}&response_type=code&redirect_uri=${this.config.redirect_uri}` };
+    return { url: `${apiConfig.authenticate}?client_id=${this.config.client_id}&response_type=code&redirect_uri=${this.config.redirect_uri}` };
   }
 
   /**

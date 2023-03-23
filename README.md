@@ -1,16 +1,19 @@
 # fourplaces
-Foursquare Places API wrapper for Node.js.
+Foursquare Places API V2 wrapper for Node.js.
 
 <p align="center">
   <img src="assets/imgs/fourplaces.png">
 </p>
 
+# Features
+* Foursquare Places API V2 endpoints
+
 # Docs
-* [Documentation](https://developer.foursquare.com/docs/places-api/endpoints)
+* [Documentation](https://location.foursquare.com/developer/docs/places-api)
 
-* [Authentication](https://developer.foursquare.com/docs/places-api/authentication)
+* [Authentication](https://location.foursquare.com/developer/reference/authentication)
 
-* [Internationalization](https://developer.foursquare.com/docs/places-api/internationalization)
+* [Supported Countries](https://location.foursquare.com/places/docs/supported-countries)
 
 * [Versioning](https://developer.foursquare.com/docs/places-api/versioning)
 

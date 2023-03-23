@@ -1,4 +1,4 @@
-const { request } = require('../utils');
+const { constants, request } = require('../utils');
 
 const { apiConfig } = require('../configs');
 
@@ -20,7 +20,7 @@ class ListsService {
     const qs = { ...this.config, ...options };
 
     const details = await request({
-      url: (`${apiConfig.url}${apiConfig.lists.details}`).replace('LIST_ID', listId), qs,
+      url: (`${apiConfig.url}${apiConfig.lists.details}`).replace(constants.LIST_ID, listId), qs,
     });
 
     return details;
@@ -38,7 +38,7 @@ class ListsService {
     const qs = { ...this.config, ...options };
 
     const add = await request({
-      url: (`${apiConfig.url}${apiConfig.lists.add}`), method: 'POST', qs,
+      url: (`${apiConfig.url}${apiConfig.lists.add}`), method: constants.POST, qs,
     });
 
     return add;
@@ -57,7 +57,7 @@ class ListsService {
     const qs = { ...this.config, ...options };
 
     const additem = await request({
-      url: (`${apiConfig.url}${apiConfig.lists.additem}`).replace('LIST_ID', listId), method: 'POST', qs,
+      url: (`${apiConfig.url}${apiConfig.lists.additem}`).replace(constants.LIST_ID, listId), method: constants.POST, qs,
     });
 
     return additem;
@@ -76,7 +76,7 @@ class ListsService {
     const qs = { ...this.config, ...options };
 
     const share = await request({
-      url: (`${apiConfig.url}${apiConfig.lists.share}`).replace('LIST_ID', listId), method: 'POST', qs,
+      url: (`${apiConfig.url}${apiConfig.lists.share}`).replace(constants.LIST_ID, listId), method: constants.POST, qs,
     });
 
     return share;

@@ -1,4 +1,4 @@
-const { request } = require('../utils');
+const { constants, request } = require('../utils');
 
 const { apiConfig } = require('../configs');
 
@@ -20,7 +20,7 @@ class CheckinsService {
     const qs = { ...this.config, ...options };
 
     const details = await request({
-      url: (`${apiConfig.url}${apiConfig.checkins.details}`).replace('CHECKIN_ID', checkinId), qs,
+      url: (`${apiConfig.url}${apiConfig.checkins.details}`).replace(constants.CHECKIN_ID, checkinId), qs,
     });
 
     return details;
@@ -56,7 +56,7 @@ class CheckinsService {
     const qs = { ...this.config, ...options };
 
     const add = await request({
-      url: (`${apiConfig.url}${apiConfig.checkins.add}`), method: 'POST', qs,
+      url: (`${apiConfig.url}${apiConfig.checkins.add}`), method: constants.POST, qs,
     });
 
     return add;
@@ -75,7 +75,7 @@ class CheckinsService {
     const qs = { ...this.config, ...options };
 
     const like = await request({
-      url: (`${apiConfig.url}${apiConfig.checkins.like}`).replace('CHECKIN_ID', checkinId), method: 'POST', qs,
+      url: (`${apiConfig.url}${apiConfig.checkins.like}`).replace(constants.CHECKIN_ID, checkinId), method: constants.POST, qs,
     });
 
     return like;
@@ -94,7 +94,7 @@ class CheckinsService {
     const qs = { ...this.config, ...options };
 
     const addpost = await request({
-      url: (`${apiConfig.url}${apiConfig.checkins.addpost}`).replace('CHECKIN_ID', checkinId), method: 'POST', qs,
+      url: (`${apiConfig.url}${apiConfig.checkins.addpost}`).replace(constants.CHECKIN_ID, checkinId), method: constants.POST, qs,
     });
 
     return addpost;

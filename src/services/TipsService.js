@@ -1,4 +1,4 @@
-const { request } = require('../utils');
+const { constants, request } = require('../utils');
 
 const { apiConfig } = require('../configs');
 
@@ -20,7 +20,7 @@ class TipsService {
     const qs = { ...this.config, ...options };
 
     const details = await request({
-      url: (`${apiConfig.url}${apiConfig.tips.details}`).replace('TIP_ID', tipId), qs,
+      url: (`${apiConfig.url}${apiConfig.tips.details}`).replace(constants.TIP_ID, tipId), qs,
     });
 
     return details;
@@ -38,7 +38,7 @@ class TipsService {
     const qs = { ...this.config, ...options };
 
     const add = await request({
-      url: (`${apiConfig.url}${apiConfig.tips.add}`), method: 'POST', qs,
+      url: (`${apiConfig.url}${apiConfig.tips.add}`), method: constants.POST, qs,
     });
 
     return add;

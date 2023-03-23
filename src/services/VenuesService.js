@@ -1,4 +1,4 @@
-const { request } = require('../utils');
+const { constants, request } = require('../utils');
 
 const { apiConfig } = require('../configs');
 
@@ -110,7 +110,7 @@ class VenuesService {
     const qs = { ...this.config, ...options };
 
     const select = await request({
-      url: (`${apiConfig.url}${apiConfig.venues.select}`).replace('VENUE_ID', venueId), qs,
+      url: (`${apiConfig.url}${apiConfig.venues.select}`).replace(constants.VENUE_ID, venueId), qs,
     });
 
     return select;
@@ -129,7 +129,7 @@ class VenuesService {
     const qs = { ...this.config, ...options };
 
     const likes = await request({
-      url: (`${apiConfig.url}${apiConfig.venues.likes}`).replace('VENUE_ID', venueId), qs,
+      url: (`${apiConfig.url}${apiConfig.venues.likes}`).replace(constants.VENUE_ID, venueId), qs,
     });
 
     return likes;
@@ -148,7 +148,7 @@ class VenuesService {
     const qs = { ...this.config, ...options };
 
     const similar = await request({
-      url: (`${apiConfig.url}${apiConfig.venues.similar}`).replace('VENUE_ID', venueId), qs,
+      url: (`${apiConfig.url}${apiConfig.venues.similar}`).replace(constants.VENUE_ID, venueId), qs,
     });
 
     return similar;
@@ -167,7 +167,7 @@ class VenuesService {
     const qs = { ...this.config, ...options };
 
     const nextvenues = await request({
-      url: (`${apiConfig.url}${apiConfig.venues.nextvenues}`).replace('VENUE_ID', venueId), qs,
+      url: (`${apiConfig.url}${apiConfig.venues.nextvenues}`).replace(constants.VENUE_ID, venueId), qs,
     });
 
     return nextvenues;
@@ -186,7 +186,7 @@ class VenuesService {
     const qs = { ...this.config, ...options };
 
     const listed = await request({
-      url: (`${apiConfig.url}${apiConfig.venues.listed}`).replace('VENUE_ID', venueId), qs,
+      url: (`${apiConfig.url}${apiConfig.venues.listed}`).replace(constants.VENUE_ID, venueId), qs,
     });
 
     return listed;
@@ -205,7 +205,7 @@ class VenuesService {
     const qs = { ...this.config, ...options };
 
     const details = await request({
-      url: (`${apiConfig.url}${apiConfig.venues.details}`).replace('VENUE_ID', venueId), qs,
+      url: (`${apiConfig.url}${apiConfig.venues.details}`).replace(constants.VENUE_ID, venueId), qs,
     });
 
     return details;
@@ -224,7 +224,7 @@ class VenuesService {
     const qs = { ...this.config, ...options };
 
     const photos = await request({
-      url: (`${apiConfig.url}${apiConfig.venues.photos}`).replace('VENUE_ID', venueId), qs,
+      url: (`${apiConfig.url}${apiConfig.venues.photos}`).replace(constants.VENUE_ID, venueId), qs,
     });
 
     return photos;
@@ -243,7 +243,7 @@ class VenuesService {
     const qs = { ...this.config, ...options };
 
     const tips = await request({
-      url: (`${apiConfig.url}${apiConfig.venues.tips}`).replace('VENUE_ID', venueId), qs,
+      url: (`${apiConfig.url}${apiConfig.venues.tips}`).replace(constants.VENUE_ID, venueId), qs,
     });
 
     return tips;
@@ -262,7 +262,7 @@ class VenuesService {
     const qs = { ...this.config, ...options };
 
     const hours = await request({
-      url: (`${apiConfig.url}${apiConfig.venues.hours}`).replace('VENUE_ID', venueId), qs,
+      url: (`${apiConfig.url}${apiConfig.venues.hours}`).replace(constants.VENUE_ID, venueId), qs,
     });
 
     return hours;
@@ -281,7 +281,7 @@ class VenuesService {
     const qs = { ...this.config, ...options };
 
     const menu = await request({
-      url: (`${apiConfig.url}${apiConfig.venues.menu}`).replace('VENUE_ID', venueId), qs,
+      url: (`${apiConfig.url}${apiConfig.venues.menu}`).replace(constants.VENUE_ID, venueId), qs,
     });
 
     return menu;
@@ -300,7 +300,7 @@ class VenuesService {
     const qs = { ...this.config, ...options };
 
     const links = await request({
-      url: (`${apiConfig.url}${apiConfig.venues.links}`).replace('VENUE_ID', venueId), qs,
+      url: (`${apiConfig.url}${apiConfig.venues.links}`).replace(constants.VENUE_ID, venueId), qs,
     });
 
     return links;
@@ -319,7 +319,7 @@ class VenuesService {
     const qs = { ...this.config, ...options };
 
     const events = await request({
-      url: (`${apiConfig.url}${apiConfig.venues.events}`).replace('VENUE_ID', venueId), qs,
+      url: (`${apiConfig.url}${apiConfig.venues.events}`).replace(constants.VENUE_ID, venueId), qs,
     });
 
     return events;
@@ -411,7 +411,7 @@ class VenuesService {
     const qs = { ...this.config, ...options };
 
     const claim = await request({
-      url: (`${apiConfig.url}${apiConfig.venues.claim}`).replace('VENUE_ID', venueId), qs,
+      url: (`${apiConfig.url}${apiConfig.venues.claim}`).replace(constants.VENUE_ID, venueId), qs,
     });
 
     return claim;
@@ -430,7 +430,7 @@ class VenuesService {
     const qs = { ...this.config, ...options };
 
     const flag = await request({
-      url: (`${apiConfig.url}${apiConfig.venues.flag}`).replace('VENUE_ID', venueId), qs,
+      url: (`${apiConfig.url}${apiConfig.venues.flag}`).replace(constants.VENUE_ID, venueId), qs,
     });
 
     return flag;
@@ -449,7 +449,7 @@ class VenuesService {
     const qs = { ...this.config, ...options };
 
     const proposeedit = await request({
-      url: (`${apiConfig.url}${apiConfig.venues.proposeedit}`).replace('VENUE_ID', venueId), method: 'POST', qs,
+      url: (`${apiConfig.url}${apiConfig.venues.proposeedit}`).replace(constants.VENUE_ID, venueId), method: constants.POST, qs,
     });
 
     return proposeedit;
@@ -468,7 +468,7 @@ class VenuesService {
     const qs = { ...this.config, ...options };
 
     const like = await request({
-      url: (`${apiConfig.url}${apiConfig.venues.like}`).replace('VENUE_ID', venueId), qs,
+      url: (`${apiConfig.url}${apiConfig.venues.like}`).replace(constants.VENUE_ID, venueId), qs,
     });
 
     return like;
